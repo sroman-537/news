@@ -15,16 +15,19 @@ get "/" do
   view "geocode"
        end
 
-  <form action="/map">
-
-get "/map" do
-    results = Geocoder.search(params["q"])
+get "/news" do
+  results = Geocoder.search(params["q"])
     lat_long = results.first.coordinates # => [lat, long]
-    "#{lat_long[0]} #{lat_long[1]}"
+    "#{lat_long[0]}"
+    " #{lat_long[1]}"  
+    forecast = ForecastIO.forecast("#{lat}","#{long}").to_hash
+    @current_temperature = forecast["currently"]["temperature"]
+    @conditions = forecast["currently"]["summary"]
+    @forecast = forecast["daily"]["data"] 
+    for day in forecast["daily"]["data"]
+
+puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}."
     end
 
-  <form action="/news">
-
-get "/news" do
-  view "ask"
+view "ask"
 end
