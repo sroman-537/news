@@ -13,19 +13,18 @@ forecast = ForecastIO.forecast(42.0574063,-87.6722787).to_hash
 
 get "/" do
   view "geocode"
-end
+       end
+
+  <form action="/map">
 
 get "/map" do
     results = Geocoder.search(params["q"])
     lat_long = results.first.coordinates # => [lat, long]
     "#{lat_long[0]} #{lat_long[1]}"
-end
+    end
 
-for day in forecast["daily"]["data"]
-  puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}."
-end
-
+  <form action="/news">
 
 get "/news" do
-  # do everything else
+  view "ask"
 end
