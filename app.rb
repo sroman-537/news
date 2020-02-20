@@ -18,8 +18,8 @@ get "/" do
 get "/news" do
   results = Geocoder.search(params["q"])
     lat_long = results.first.coordinates # => [lat, long]
-    "#{lat_long[0]}"
-    " #{lat_long[1]}"  
+    lat= "#{lat_long[0]}"
+    long= "#{lat_long[1]}"  
     forecast = ForecastIO.forecast("#{lat}","#{long}").to_hash
     @current_temperature = forecast["currently"]["temperature"]
     @conditions = forecast["currently"]["summary"]
