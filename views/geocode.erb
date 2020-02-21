@@ -31,8 +31,8 @@
     </div>
 
     <ul>
-    <% for day in forecast ["daily"]["data"] %>
-        <li><%= @lat_long > %></li>
+    <% for day in @forecast %>
+        <li>The high today is <%=day["temperatureHigh"]%> and <%=day["summary"] %></li>
     <% end %>
   </ul>
 
