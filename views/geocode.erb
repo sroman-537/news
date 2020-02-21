@@ -23,12 +23,18 @@
   <body>
 
     <div class="container mt-5">
-      <h1>Geocoding</h1>
+      <h1>Enter any City</h1>
       <form action="/news">
         <input type="text" name="q">
         <button type="submit">Go there</submit>
       </form>
     </div>
+
+    <ul>
+    <% for day in forecast ["daily"]["data"] %>
+        <li><%= @lat_long > %></li>
+    <% end %>
+  </ul>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
