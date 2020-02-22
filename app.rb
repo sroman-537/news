@@ -11,6 +11,10 @@ ForecastIO.api_key = "0adf9455fa4ccdbcd3cd91b7814d2cbe"
 
 forecast = ForecastIO.forecast(42.0574063,-87.6722787).to_hash
 
+url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=05420b4bdf204018b81ef80b92aa3e2a"
+news = HTTParty.get(url).parsed_response.to_hash
+# news is now a Hash you can pretty print (pp) and parse for your output
+
 get "/" do
   view "geocode"
        end
@@ -29,5 +33,7 @@ get "/news" do
 puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}."
     end
 
+puts news
+  
 view "ask"
 end
