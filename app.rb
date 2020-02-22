@@ -33,6 +33,7 @@ get "/news" do
 puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}."
     end
 
+    @newsupdate =news["articles"] 
     for title in news["articles"]
 puts "Check out these top headlines: #{title["title"]}.
     link: #{title["url"]}"
