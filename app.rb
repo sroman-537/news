@@ -28,8 +28,10 @@ get "/news" do
     @current_temperature = forecast["currently"]["temperature"]
     @conditions = forecast["currently"]["summary"]
     @forecast = forecast["daily"]["data"] 
-    for day in forecast["daily"]["data"]
 
+puts "It is currently #{@current_temperature} and #{@conditions}"
+    
+    for day in forecast["daily"]["data"]
 puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}."
     end
 
