@@ -36,6 +36,7 @@ puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}."
     for article in news["article"]["headline"]
 
 puts "Check out #{article["headline"]}"
+    end
   
 view "ask"
 end

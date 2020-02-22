@@ -35,9 +35,15 @@
         <li>The high today is <%=day["temperatureHigh"]%> and <%=day["summary"] %></li>
     <% end %>
    
-    </ul>
+   </ul>
 
+   <ul>
 
+ <% for article in @news %>
+        <li>Check out <%=article["headline"]%></li>
+    <% end %>
+
+     </ul>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
