@@ -33,7 +33,9 @@ get "/news" do
 puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}."
     end
 
-pp news
+    for article in news["article"]["headline"]
+
+puts "Check out the headline news!"
   
 view "ask"
 end
