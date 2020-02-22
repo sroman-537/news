@@ -41,6 +41,10 @@
 
     <% for title in @news %>
         <li>Check out these top headlines: <%=title["title"]%></li>
+    <p>For more details, please use the button below to access the News Source</p>
+    <p>
+        <a class="btn btn-primary"href="link: <%title["url"]%></a>
+    </p>
     <% end %>
 
      </ul>
